@@ -13,6 +13,9 @@ define ('SIDES_OF_DICE', 6);
 |
 */
 
+// Routing Resource Controllers
+Route::resource('posts', 'PostsController');
+
 // Laravel greeting page
 Route::get('/', 'HomeController@showWelcome');
 
@@ -22,20 +25,8 @@ Route::get('/blog', 'HomeController@redirectWP');
 // farewell message
 Route::get('/bye', 'HomeController@sayGoodbye');
 
-// sayHello with array logic
-Route::get('/sayhello/{name}', 'HomeController@sayHello');
-
-// say hello logic practice
-Route::get('/codeup', 'HomeController@helloCodeup');
-
 // Resumé page
 Route::get('/resume', 'HomeController@showResume');
 
 // Portfolio page
 Route::get('/portfolio', 'HomeController@showPortfolio');
-
-// two dice game variants w/ or w/o bootstrap
-Route::get('/rolldice/{guess?}', 'HomeController@rollDice');
-
-// Routing Resource Controllers
-Route::resource('posts', 'PostsController');
