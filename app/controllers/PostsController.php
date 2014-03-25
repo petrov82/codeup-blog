@@ -9,7 +9,7 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return "here you get Posts";
+		return "Here, you get Posts";
 		//return View::get('posts');
 	}
 
@@ -20,8 +20,8 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return "You created a Post!";
-		//return View::get('posts/create');
+		//return "You created a Post!";
+		return View::make('posts.create');
 	}
 
 	/**
@@ -31,8 +31,11 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		return "You can show, update, edit, and destroy!";
+		//return Redirect::back()->withInput();
+		//return "You can show, update, edit, and destroy!";
 		//return View::post('posts/{post}');
+		Log::info(Input::all());
+		return Redirect::action('PostsController@create')->withInput();
 	}
 
 	/**
