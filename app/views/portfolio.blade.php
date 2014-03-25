@@ -92,9 +92,6 @@
       <hr class="featurette-divider">
 
       <!-- /END THE FEATURETTES -->
-
-
-  <div style="font-family: monospace;" >Peter James Rhodes 2014. All Rights Reserved</div>
 </div>
 </div>
 @stop
