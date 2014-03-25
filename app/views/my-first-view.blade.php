@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-	Roll the Dice!
+	Hello!
 	@stop
 
 @section('content')
