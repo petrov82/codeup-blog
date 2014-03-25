@@ -51,6 +51,21 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+// App::abort(function($exception)
+// {
+//     return Response::view('errors.abort', array(), 403);
+// });
+
+App::missing(function($exception)
+{
+    return Response::view('errors.missing', array(), 404);
+});
+
+// App::serverError(function($exception)
+// {
+//     return Response::view('errors.servererror', array(), 500);
+// });
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
