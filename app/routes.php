@@ -36,3 +36,6 @@ Route::get('/portfolio', 'HomeController@showPortfolio');
 
 // two dice game variants w/ or w/o bootstrap
 Route::get('/rolldice/{guess?}', 'HomeController@rollDice');
+
+// Routing Resource Controllers
+Route::resource('posts', 'PostsController');
