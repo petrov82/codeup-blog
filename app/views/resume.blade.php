@@ -11,12 +11,12 @@
       font-family: 'Open Sans', sans-serif;
     }
       </style>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
         <h1 {font-family: 'Open Sans', sans-serif;} class="centertext">Peter J. Rhodes <small> /*Junior Software Developer*/</small></h1>
-    </div>
-  </div> 
+      </div>
+    </div> 
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-3 centertext"><strong>email: </strong>peter@peterrhodes.net</div>
@@ -29,16 +29,15 @@
     
     <hr>
       <div class="row">
-        <dl>
-          <h4><strong>Education:</strong></h4>
-            <div class="col-md-10">
-              <strong>CodeUp Web Development bootcamp &nbsp;-&nbsp; Linux, Apache, MySQL, PHP, HTML, CSS, and JavaScript </strong>
-            </div>
-            <div class="col-md-2">Completed Spring 2014</div>
-            <div class="col-md-10">
-              University of Texas at San Antonio&nbsp;-&nbsp; Bachelor of Arts in History
-            </div>
-            <div class="col-md-2"> Completed Winter 2010</div>
+        <h4><strong>Education:</strong></h4>
+          <div class="col-md-10">
+            <strong>CodeUp Web Development bootcamp &nbsp;-&nbsp; Linux, Apache, MySQL, PHP, HTML, CSS, and JavaScript </strong>
+          </div>
+          <div class="col-md-2">Completed Spring 2014</div>
+          <div class="col-md-10">
+             University of Texas at San Antonio&nbsp;-&nbsp; Bachelor of Arts in History
+          </div>
+          <div class="col-md-2"> Completed Winter 2010</div>
         </div>
       </div>
 </div>
