@@ -14,16 +14,16 @@ define ('SIDES_OF_DICE', 6);
 */
 
 // Laravel greeting page
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@showWelcome');
 
 // farewell message
 Route::get('/bye', function()
 {
 	return ('Goodbye!');
 });
+
+// sayHello with array logic
+Route::get('/sayhello/{name}', 'HomeController@sayHello');
 
 // say hello logic practice
 // Route::get('/sayhello', function()
@@ -51,7 +51,7 @@ Route::get('/bye', function()
 // Resumé page
 Route::get('/resume', function()
 {
-    return "This is my resumé.";
+    return View::make('resume');
 });
 
 // Portfolio page
@@ -60,14 +60,6 @@ Route::get('/portfolio', function()
 	return View::make('portfolio');
 });
 
-// sayhello with array logic
-Route::get('/sayhello/{name}', function($name)
-{
-	$data = array('name' => $name,
-	);
-
-	return View::make('my-first-view')->with('name', $name);
-});
 
 // two dice game variants w/ or w/o bootstrap
 Route::get('/rolldice/{guess?}', function($guess = null)
