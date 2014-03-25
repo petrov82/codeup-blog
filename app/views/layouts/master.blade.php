@@ -22,6 +22,16 @@
 
     <!-- Custom styles for this template -->
     <link href="theme.css" rel="stylesheet">
+    <style type="text/css">
+        #maincontent {
+          margin-top: 50px;
+          margin-bottom: 50px;
+        }
+
+        #features {
+          margin-top: 50px;
+        }
+    </style>
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -67,9 +77,16 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
-
+<div class="container-fluid" id="maincontent">
 		@yield('content')
+</div>
+ <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
 
+    </div><!-- /.container -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
