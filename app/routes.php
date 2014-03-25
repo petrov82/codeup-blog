@@ -16,116 +16,23 @@ define ('SIDES_OF_DICE', 6);
 // Laravel greeting page
 Route::get('/', 'HomeController@showWelcome');
 
+// redirect to WP
+Route::get('/blog', 'HomeController@redirectWP');
+
 // farewell message
-Route::get('/bye', function()
-{
-	return ('Goodbye!');
-});
+Route::get('/bye', 'HomeController@sayGoodbye');
 
 // sayHello with array logic
 Route::get('/sayhello/{name}', 'HomeController@sayHello');
 
 // say hello logic practice
-// Route::get('/sayhello', function()
-// {
-//     return "Hello, Codeup!";
-// });
-
-// Route::get('/sayhello/{name}', function($name)
-// {
-//     return "Hello, $name!";
-// });
-
-// Route::get('/sayhello/{name}', function($name)
-// {
-//     if ($name == "Chris")
-//     {
-//         return Redirect::to('/');
-//     }
-//     else
-//     {
-//         return "Hello, $name!";
-//     }
-// });
+Route::get('/codeup', 'HomeController@helloCodeup');
 
 // Resumé page
-Route::get('/resume', function()
-{
-    return View::make('resume');
-});
+Route::get('/resume', 'HomeController@showResume');
 
 // Portfolio page
-Route::get('/portfolio', function()
-{
-	return View::make('portfolio');
-});
-
+Route::get('/portfolio', 'HomeController@showPortfolio');
 
 // two dice game variants w/ or w/o bootstrap
-Route::get('/rolldice/{guess?}', function($guess = null)
-{
-
-	$roll = mt_rand(1, SIDES_OF_DICE);
-
-	$didroll = "Have";
-
-	$result = "";
-
-	if (is_null($guess) || (!is_numeric($guess)))
-	{
-		$didroll = "Have Not";
-		$result = "You must guess a number, or be cast into the gorge of eternal peril! You could have guessed $roll!";
-	}
-	elseif ($guess == $roll) 
-	{
-		$result = "You have guessed correctly, padawan! $guess is the correct number!";
-	}
-	else
-	{
-		$result = "You have chosen $guess unwisely. The correct answer is $roll.";
-	}
-
-
-	$data = array(
-		'guess' => $guess,
-		'result' => $result,
-		'roll' => $roll,
-		'didroll' => $didroll
-	);
-
-	return View::make('rolldice')->with($data);
-});
-
-Route::get('/rollagain/{guess?}', function($guess = null)
-{
-
-	$roll = mt_rand(1, SIDES_OF_DICE);
-
-	$didroll = "Have";
-
-	$result = "";
-
-	if (is_null($guess) || (!is_numeric($guess)))
-	{
-		$didroll = "Have Not";
-		$result = "You must guess a number, or be cast into the gorge of eternal peril! You could have guessed $roll!";
-	}
-	elseif ($guess == $roll) 
-	{
-		$result = "You have guessed correctly, padawan! $guess is the correct number!";
-	}
-	else
-	{
-		$result = "You have chosen $guess unwisely. The correct answer is $roll.";
-	}
-
-
-	$data = array(
-		'guess' => $guess,
-		'result' => $result,
-		'roll' => $roll,
-		'didroll' => $didroll
-	);
-
-	return View::make('rollagain')->with($data);
-});
+Route::get('/rolldice/{guess?}', 'HomeController@rollDice');
