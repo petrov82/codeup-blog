@@ -18,7 +18,7 @@ New Post
 			  <div class="form-group">
 			    <label for="content" class="col-sm-2 control-label">Body</label>
 			    <div class="col-sm-10">
-			      <textarea class="form-control" rows="5" type="text" class="form-control" id="content" name="content" placeholder="Input your thoughts here...">{{{ Input::old('content') }}}</textarea>
+			      <textarea class="form-control" rows="5" type="text" class="form-control" id="body" name="body" placeholder="Input your thoughts here...">{{{ Input::old('body') }}}</textarea>
 			    </div>
 			  </div>
 			  <div class="form-group">
