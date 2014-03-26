@@ -59,8 +59,8 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="{{ Request::is('resume') ? 'active' : '' }}">Resume</a></li>
-            <li><a href="{{ Request::is('portfolio') ? 'active' : '' }}">Portfolio</a></li>
+            <li><a href="{{{ action('HomeController@showResume') }}}">Resume</a></li>
+            <li><a href="{{{ action('HomeController@showPortfolio') }}}">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -82,10 +82,12 @@
 		@yield('content')
 </div>
  <!-- FOOTER -->
+    <div class="container">
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
         <div style="font-family: monospace;" >&copy; 2014 Peter James Rhodes. All Rights Reserved &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
+    </div>
 
     </div><!-- /.container -->
 
