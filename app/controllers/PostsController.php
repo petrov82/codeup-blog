@@ -9,8 +9,8 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return "Here, you get Posts";
-		//return View::get('posts');
+		$posts = Post::all();
+		return View::make('posts.index')->with('posts', $posts);
 	}
 
 	/**
@@ -25,17 +25,21 @@ class PostsController extends \BaseController {
 	}
 
 	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
+	 * save to db
 	 */
 	public function store()
 	{
-		//return Redirect::back()->withInput();
-		//return "You can show, update, edit, and destroy!";
-		//return View::post('posts/{post}');
 		Log::info(Input::all());
-		return Redirect::action('PostsController@create')->withInput();
+
+		$post = new Post();
+
+		$post->title = Input::get('title');
+		$post->body = Input::get('body');
+
+		$post->save();
+
+		return Redirect::action('PostsController@index');
+		//return Redirect::back()->withInput();
 	}
 
 	/**
@@ -46,8 +50,8 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return "You can show, update, edit, and destroy!";
-		//return View::get('posts/{post}');
+		$post = Post::find($id);
+		return View::make('posts.show')->with('post', $post);
 	}
 
 	/**

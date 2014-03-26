@@ -30,3 +30,8 @@ Route::get('/resume', 'HomeController@showResume');
 
 // Portfolio page
 Route::get('/portfolio', 'HomeController@showPortfolio');
+
+Route::get('orm-test', function () {
+		$posts = Post::all();
+		return $posts;
+	});
