@@ -13,12 +13,14 @@ New Post
 			    <label for="title" class="col-sm-2 control-label">Title</label>
 			    <div class="col-sm-10">
 			      <input type="title" class="form-control" id="title" name="title" placeholder="Title" value="{{{ Input::old('title') }}}">
+					{{ $errors->has('title') ? $errors->first('title', '<span class="help-block">:message</span>') : '' }}
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label for="content" class="col-sm-2 control-label">Body</label>
 			    <div class="col-sm-10">
 			      <textarea class="form-control" rows="5" type="text" class="form-control" id="body" name="body" placeholder="Input your thoughts here...">{{{ Input::old('body') }}}</textarea>
+			      {{ $errors->has('body') ? $errors->first('body', '<span class="help-block">:message</span>') : '' }}
 			    </div>
 			  </div>
 			  <div class="form-group">
@@ -36,6 +38,8 @@ New Post
 			    </div>
 			  </div>
 			</form>
+				<p><a href="{{{ action('PostsController@index')}}}">Return to posts index</a></p>
+
  		</div>
  	</div>
 @stop

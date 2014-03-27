@@ -29,17 +29,30 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		Log::info(Input::all());
 
-		$post = new Post();
+		//Log::info(Input::all());
 
-		$post->title = Input::get('title');
-		$post->body = Input::get('body');
+		// create the validator
+		$validator = Validator::make(Input::all(), Post::$rules);
 
-		$post->save();
+		// attempt validation
+		if ($validator->fails())
+		{
+			// validation failed, redirect to the post create page with validation errors and old inputs
+			return Redirect::back()->withInput()->withErrors($validator);
+		}
+		else
+		{
+			// validation succeeded, create and save the post
+			$post = new Post();
 
-		return Redirect::action('PostsController@index');
-		//return Redirect::back()->withInput();
+			$post->title = Input::get('title');
+			$post->body = Input::get('body');
+
+			$post->save();
+
+			return Redirect::action('PostsController@index');
+		}
 	}
 
 	/**
@@ -62,8 +75,8 @@ class PostsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		return "You can show, update, edit, and destroy!";
-		//return View::get('posts/{post}/edit');
+		//return "You can show, update, edit, and destroy!";
+		return View::make('posts.{post}.edit')->with('post', $post);
 	}
 
 	/**
