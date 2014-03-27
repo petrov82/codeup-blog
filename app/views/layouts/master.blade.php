@@ -41,6 +41,7 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
   </head>
 
   <body role="document">
@@ -54,11 +55,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{{ Request::is('blog') ? 'active' : '' }}">Peter J. Rhodes</a>
+          <a class="navbar-brand" href="{{{ action('HomeController@showWelcome') }}}">Peter J. Rhodes</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="{{{ action('PostsController@index') }}}">Blog</a></li>
             <li><a href="{{{ action('HomeController@showResume') }}}">Resume</a></li>
             <li><a href="{{{ action('HomeController@showPortfolio') }}}">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>

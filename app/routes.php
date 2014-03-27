@@ -19,9 +19,6 @@ Route::resource('posts', 'PostsController');
 // Laravel greeting page
 Route::get('/', 'HomeController@showWelcome');
 
-// redirect to WP
-Route::get('/blog', 'HomeController@redirectWP');
-
 // farewell message
 Route::get('/bye', 'HomeController@sayGoodbye');
 

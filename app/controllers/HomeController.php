@@ -20,11 +20,6 @@ class HomeController extends BaseController {
 		return View::make('hello');
 	}
 
-	public function redirectWP()
-	{
-		return Redirect::to('http://peterrhodes.net');
-	}
-
 	public function sayGoodbye()
 	{
 		return ('Goodbye!');
