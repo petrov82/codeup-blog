@@ -5,8 +5,10 @@
 @stop
 
 @section('content')
-	<div>
-		<h2>{{{ $post->title }}}</h2>
+	<div class="blog-post">
+		<h2 class="blog-post-title">{{{ $post->title }}}</h2>
+		<small><u>Last updated at: {{{ $post->updated_at }}}</u></small>
 		<p>{{{ $post->body }}}</p>
+		<p><a href="{{{ action('PostsController@index')}}}">Return to posts index</a></p>
 	</div>
 @stop
