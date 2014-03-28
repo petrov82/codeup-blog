@@ -20,8 +20,8 @@
     <!-- Bootstrap theme -->
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="theme.css" rel="stylesheet">
+    <!-- Custom styles for this template 
+    <link href="theme.css" rel="stylesheet">-->
 
     @yield('top-script')
 
@@ -83,10 +83,16 @@
 <div class="container-fluid" id="maincontent">
 
   @if (Session::has('successMessage'))
-    <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
+    <div class="alert alert-success fade in out">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h4>{{{ Session::get('successMessage') }}}</h4>
+    </div>
 @endif
 @if (Session::has('errorMessage'))
-    <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+    <div class="alert alert-danger fade in out">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h4>{{{ Session::get('errorMessage') }}}</h4>
+    </div>
 @endif
 
 		@yield('content')
@@ -107,8 +113,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/docs.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/assets/js/docs.min.js"></script>
+    <script type="text/javascript">$(".alert").alert('close')</script>
     @yield('bottom-script')
   </body>
 </html>
