@@ -1,5 +1,6 @@
 <?php
 
+
 class PostsController extends \BaseController {
 
 	/**
@@ -9,7 +10,7 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::paginate(4);
+		$posts = Post::orderBy('created_at', 'desc')->paginate(4);
 		return View::make('posts.index')->with('posts', $posts);
 	}
 
