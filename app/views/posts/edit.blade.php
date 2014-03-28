@@ -1,45 +1,21 @@
 @extends('layouts.master')
 
 @section('title')
-	Edit Post
-@stop
+Edit Post
+ @stop
 
 @section('content')
-
 	<div class="container-fluid">
- 		<div class=container>
- 			<h1>Create a new Post<small> /*all fields required*/</small></h1>
- 			<form class="form-horizontal" role="form" action="{{{ action('PostsController@store') }}}" method="POST">
-			  <div class="form-group">
-			    <label for="title" class="col-sm-2 control-label">Title</label>
-			    <div class="col-sm-10">
-			      <input type="title" class="form-control" id="title" name="title" placeholder="Title" value="{{{ $post->title }}}">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="content" class="col-sm-2 control-label">Body</label>
-			    <div class="col-sm-10">
-			      <textarea class="form-control" rows="5" type="text" class="form-control" id="body" name="body" placeholder="Input your thoughts here...">{{{ $post->body }}}</textarea>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <div class="checkbox">
-			        <label>
-			          <input type="checkbox"> Save & Publish (Saves as Draft by default)
-			        </label>
-			      </div>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-success">Post</button>
-			    </div>
-			  </div>
-			</form>
-				<p><a href="{{{ action('PostsController@index')}}}">Return to posts index</a></p>
+		<div class=container>
+			<div class="blog-header">
+				<h1 class="blog-title">Edit Your Post<small> /*all fields required*/</small></h1>
+				{{ Form::model($post, array('class' => 'form-horizontal', 'action' => array('PostsController@update', $post->id), 'method' => 'put')) }}
+			</div>
 
- 		</div>
- 	</div>
- 
+					@include('posts.form')
+
+				{{ Form::close() }}
+				<p><a href="{{{ action('PostsController@index') }}}">Index</a></p>
+		</div>
+	</div>
 @stop

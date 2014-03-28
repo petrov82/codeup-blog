@@ -10,12 +10,21 @@
 		<a href="{{ action('PostsController@create') }}" class="btn btn-primary btn-lg active" role="button">Create an New Post</a>
 
 	</div>
+
+		{{ $posts->links() }}
+
 	@foreach ($posts as $post)
 		<div class="blog-post">
 			<h2 class="blog-post-title"><a href="{{{ action('PostsController@show', $post->id)}}}">{{{ $post->title }}}</a></h2>
-			<small><u>Last updated at: {{{ $post->updated_at }}}</u></small>
+			<p>
+				<small><u>Last updated at: {{{ $post->updated_at->setTimezone('America/Chicago')->format('l, M j, Y @ h:i A') }}}</u></small>
+				<a href="{{ action('PostsController@edit', $post->id) }}">&nbsp;|&nbsp;Edit</a>
+			</p>
 			<p>{{{ $post->body }}}</p>
-			<p><a href="{{ action('PostsController@edit', $post->id) }}">Edit this post</a>
+			
 		</div>
 	@endforeach
+
+	{{ $posts->links() }}
 @stop
+

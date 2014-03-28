@@ -22,6 +22,9 @@
 
     <!-- Custom styles for this template -->
     <link href="theme.css" rel="stylesheet">
+
+    @yield('top-script')
+
     <style type="text/css">
         #maincontent {
           margin-top: 50px;
@@ -33,8 +36,6 @@
         }
     </style>
 
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -98,5 +99,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
     <script src="../../assets/js/docs.min.js"></script>
+    @yield('bottom-script')
   </body>
 </html>

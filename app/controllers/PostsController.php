@@ -9,7 +9,7 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::all();
+		$posts = Post::paginate(4);
 		return View::make('posts.index')->with('posts', $posts);
 	}
 
@@ -21,7 +21,7 @@ class PostsController extends \BaseController {
 	public function create()
 	{
 		//return "You created a Post!";
-		return View::make('posts.create');
+		return View::make('posts.create')->with('post', new Post());
 	}
 
 	/**
@@ -76,7 +76,8 @@ class PostsController extends \BaseController {
 	public function edit($id)
 	{
 		//return "You can show, update, edit, and destroy!";
-		return View::make('posts.{post}.edit')->with('post', $post);
+		$post = Post::findOrFail($id);
+		return View::make('posts.edit')->with('post', $post);
 	}
 
 	/**
@@ -87,8 +88,27 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		return "You can show, update, edit, and destroy!";
-		//return View::put('posts/{post}');
+		$post = Post::findOrFail($id);
+
+		$validator = Validator::make(Input::all(), Post::$rules);
+
+		// attempt validation
+		if ($validator->fails())
+		{
+			// validation failed, redirect to the post create page with validation errors and old inputs
+			return Redirect::back()->withInput()->withErrors($validator);
+		}
+		else
+		{
+			// validation succeeded, create and save the post
+
+			$post->title = Input::get('title');
+			$post->body = Input::get('body');
+
+			$post->save();
+
+			return Redirect::action('PostsController@index');
+		}
 	}
 
 	/**
@@ -99,8 +119,9 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		return "You can show, update, edit, and destroy!";
-		//return View::delete('posts/{post}');
+		//return "You can show, update, edit, and destroy!";
+		Post::findOrFail($id)->delete();
+		return Redirect::action('PostsController@index');
 	}
 
 }
