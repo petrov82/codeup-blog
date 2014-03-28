@@ -9,7 +9,7 @@
 		<h2 class="blog-post-title">{{{ $post->title }}}</h2>
 		<small><u>Last updated at: {{{ $post->updated_at }}}</u></small>
 		<div class="row">
-			<div class="col-md-5"><p>{{{ $post->body }}}</p></div>
+			<div class="col-md-10"><p>{{{ $post->body }}}</p></div>
 		</div>
 		<p>
 			<a href="{{ action('PostsController@edit', $post->id) }}">Edit&nbsp;|&nbsp;</a>
