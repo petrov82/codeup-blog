@@ -31,7 +31,16 @@
       <div class="row">
         <h4><strong>Education:</strong></h4>
           <div class="col-md-10">
-            <p><strong>CodeUp Web Development bootcamp</strong> &nbsp;-&nbsp; Linux, Apache, MySQL, PHP, HTML, CSS, and JavaScript </p>
+            <strong>CodeUp Web Development bootcamp &nbsp;-&nbsp; Linux, Apache, MySQL, PHP, HTML, CSS, and JavaScript </strong>
+          </div>
+          <div class="col-md-2">Completed Spring 2014</div>
+          <div class="col-md-10">
+             University of Texas at San Antonio&nbsp;-&nbsp; Bachelor of Arts in History
+          </div>
+          <div class="col-md-2"> Completed Winter 2010</div>
+          <h4><strong>Education:</strong></h4>
+          <div class="col-md-10">
+            <strong>CodeUp Web Development bootcamp &nbsp;-&nbsp; Linux, Apache, MySQL, PHP, HTML, CSS, and JavaScript </strong>
           </div>
           <div class="col-md-2">Completed Spring 2014</div>
           <div class="col-md-10">
@@ -39,19 +48,9 @@
           </div>
           <div class="col-md-2"> Completed Winter 2010</div>
         </div>
-      </div>
-      <div class="row">
-        <h4><strong>Skills:</strong></h4>
-          <div class="col-md-10">
-            <p>CodeUp Web Development bootcamp &nbsp;-&nbsp; Linux, Apache, MySQL, PHP, HTML, CSS, and JavaScript </p>
-          </div>
-          <div class="col-md-2">Completed Spring 2014</div>
-          <div class="col-md-10">
-             University of Texas at San Antonio&nbsp;-&nbsp; Bachelor of Arts in History
-          </div>
-          <div class="col-md-2"> Completed Winter 2010</div>
         </div>
       </div>
+
 </div>
 
 @stop

@@ -8,14 +8,14 @@ class BaseModel extends Eloquent {
 	public function getCreatedAtAttribute($value)
 	{
 		$utc = Carbon::createFromFormat($this->getDateFormat(), $value);
-		return $utc->setTimezone('America/Chicago');
+		return $utc->setTimezone(Config::get('app.localTimezone'));
 	}
 
 // Accessor to change timestampt for Updated posts
 	public function getUpdatedAtAttribute($value)
 	{
 		$utc = Carbon::createFromFormat($this->getDateFormat(), $value);
-		return $utc->setTimezone('America/Chicago');
+		return $utc->setTimezone(Config::get('app.localTimezone'));
 	}
 
 }
