@@ -31,7 +31,7 @@
       <div class="row">
         <h4><strong>Education:</strong></h4>
           <div class="col-md-10">
-            <strong>CodeUp Web Development bootcamp &nbsp;-&nbsp; Linux, Apache, MySQL, PHP, HTML, CSS, and JavaScript </strong>
+            <p><strong>CodeUp Web Development bootcamp</strong> &nbsp;-&nbsp; Linux, Apache, MySQL, PHP, HTML, CSS, and JavaScript </p>
           </div>
           <div class="col-md-2">Completed Spring 2014</div>
           <div class="col-md-10">
