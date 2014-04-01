@@ -8,7 +8,7 @@ class PostsController extends \BaseController {
 		parent::__construct();
 
 		//run an auth filter before all methods except index and show
-		$this->beforeFilter('auth.basic', array('except' => ['index', 'show']));
+		$this->beforeFilter('auth', array('except' => ['index', 'show']));
 	}
 
 	/**
@@ -19,7 +19,7 @@ class PostsController extends \BaseController {
 	public function index()
 	{
 		$search = Input::get('search');
-		$query = Post::orderBy('created_at', 'desc');
+		$query = Post::with('user')->orderBy('created_at', 'desc');
 		if (is_null($search))
 		{
 			$posts = $query->paginate(4);
@@ -64,6 +64,7 @@ class PostsController extends \BaseController {
 		{
 			// validation succeeded, create and save the post
 			$post = new Post();
+			$post->user_id = Auth::user()->id;
 
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
