@@ -67,6 +67,14 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 		$this->attributes['username'] = strtolower($value);
 	}
 
+	/**
+	*Tell User table it has many posts relationship
+	*/
+
+	public function posts()
+	{
+		return $this->hasMany('Post');
+	}
 
 
 }

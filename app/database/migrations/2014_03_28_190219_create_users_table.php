@@ -8,7 +8,7 @@ class CreateUsersTable extends Migration {
 	/**
 	 * Run the migrations.
 	 *
-	 * @return void
+	 * void
 	 */
 	public function up()
 	{
@@ -24,11 +24,11 @@ class CreateUsersTable extends Migration {
 	/**
 	 * Reverse the migrations.
 	 *
-	 * @return void
+	 *  void
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('users');
 	}
 
 }

@@ -13,4 +13,13 @@ class Post extends BaseModel {
     'body'       => 'required|max:10000'
 	);
 
+		/**
+	*Tell Post table it belongs to a user relationship
+	*/
+
+	public function user()
+	{
+		return $this->belongsTo('User');
+	}
+
 }

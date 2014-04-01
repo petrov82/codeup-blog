@@ -77,6 +77,7 @@
               </ul>
             </li>
           </ul>
+          @yield('searchbar')
         </div><!--/.nav-collapse -->
       </div>
     </div>

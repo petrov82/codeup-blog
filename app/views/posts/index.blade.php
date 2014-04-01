@@ -4,6 +4,14 @@
 	Blog Index
 @stop
 
+@section('searchbar')
+<form class="navbar-form navbar-right">
+            {{ Form::open(array('action' => array('PostsController@index'), 'method' => 'GET')) }}
+            {{ Form::text('search', null, array('class' => 'form-control', 'placeholder' => 'Search the Blog')) }}
+            {{ Form::submit('Search', array('class' => 'btn btn-default')) }}
+          </form>
+@stop
+
 @section('content')
 	<div>
 		<h1><u>The Blogroll</u></h1>
@@ -11,7 +19,7 @@
 
 	</div>
 
-		{{ $posts->links() }}
+		{{ $posts->appends(array('search' => Input::get('search')))->links() }}
 
 @foreach ($posts as $post)
 	<div class="container-fluid">
@@ -35,6 +43,7 @@
 	</div>
 @endforeach
 
-	{{ $posts->links() }}
+		{{ $posts->appends(array('search' => Input::get('search')))->links() }}
+
 @stop
 
