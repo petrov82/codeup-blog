@@ -9,6 +9,9 @@ class PostsController extends \BaseController {
 
 		//run an auth filter before all methods except index and show
 		$this->beforeFilter('auth', array('except' => ['index', 'show']));
+
+//		$this->beforeFilter('post.protect', array('only' => ['edit', 'update', 'destroy']));
+
 	}
 
 	/**
@@ -133,7 +136,7 @@ class PostsController extends \BaseController {
 		{
 			Session::flash('errorMessage', 'Post Could Not Be Updated - See Form Errors');
 			// validation failed, redirect to the post create page with validation errors and old inputs
-			return Redirect::back()->withInput()->withErrors($validator);
+			return Redirect::back()->withInput();
 		}
 		else
 		{
@@ -165,7 +168,7 @@ class PostsController extends \BaseController {
 		// only post->user_id can edit
 		if (Auth::user()->id != $post->user_id)
 		{
-			Session::flash('errorMessage', 'You are not authorized to edit this Post!');
+			Session::flash('errorMessage', 'You are not authorized to delete this Post!');
 			// validation failed, redirect to the post create page with validation errors and old inputs
 			return Redirect::back()->withInput();
 		}
