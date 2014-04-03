@@ -7,7 +7,11 @@
 @section('content')
 	<div class="blog-post">
 		<h2 class="blog-post-title">{{{ $post->title }}}</h2>
-		<small><u>Last updated at: {{{ $post->updated_at }}}</u></small>
+		<small><u>Last updated at: {{{ $post->updated_at }}}</u>&nbsp;|&nbsp;</small>
+		<small>Author: {{{ $post->user->user_name }}}</small>
+		@if ($post->image_path != NULL)
+		<div><img src="../uploads/{{ $post->image_path }}"></div>
+		@endif
 		<div class="row">
 			<div class="col-md-10"><p>{{{ $post->body }}}</p></div>
 		</div>

@@ -13,6 +13,12 @@
 			    </div>
 			  </div>
 			  <div class="form-group">
+			  	<label class="col-sm-2 control-label" for="file">Upload a Photo</label>
+			  		<div class="col-sm-10">
+			  			<input id="file" name="file" type="file">
+			  		</div>
+			  </div>
+			  <div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
 			      <div class="checkbox">
 			        <label>

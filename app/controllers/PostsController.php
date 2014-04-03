@@ -69,6 +69,18 @@ class PostsController extends \BaseController {
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
 
+			// Pull photo
+			if (Input::hasFile('file'))
+			{
+				$file = Input::file('file');
+				$destinationPath = 'uploads';
+				$filename = $file->getClientOriginalName();
+				$extension = $file->getClientOriginalExtension(); 
+				$filename = str_random(12) . '.' . $extension;
+				$uploadSuccess = Input::file('file')->move($destinationPath, $filename);
+				$post->image_path = $filename;
+			}
+
 			$post->save();
 			Session::flash('successMessage', 'Post Created Successfully');
 			return Redirect::action('PostsController@index');
@@ -95,9 +107,19 @@ class PostsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//return "You can show, update, edit, and destroy!";
 		$post = Post::findOrFail($id);
-		return View::make('posts.edit')->with('post', $post);
+		// only post->user_id can edit
+		if (Auth::user()->id != $post->user_id)
+		{
+			Session::flash('errorMessage', 'You are not authorized to edit this Post!');
+			// validation failed, redirect to the post create page with validation errors and old inputs
+			return Redirect::back()->withInput();
+		}
+		else
+		{
+			return View::make('posts.edit')->with('post', $post);
+		}
+
 	}
 
 	/**
@@ -122,9 +144,20 @@ class PostsController extends \BaseController {
 		else
 		{
 			// validation succeeded, create and save the post
-
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
+
+			// Pull photo
+			if (Input::hasFile('file'))
+			{
+				$file = Input::file('file');
+				$destinationPath = 'uploads';
+				$filename = $file->getClientOriginalName();
+				$extension = $file->getClientOriginalExtension(); 
+				$filename = str_random(12) . '.' . $extension;
+				$uploadSuccess = Input::file('file')->move($destinationPath, $filename);
+				$post->image_path = $filename;
+			}
 
 			$post->save();
 			Session::flash('successMessage', 'Post Updated Successfully');
@@ -140,8 +173,18 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//return "You can show, update, edit, and destroy!";
-		Post::findOrFail($id)->delete();
-		return Redirect::action('PostsController@index');
+		$post = Post::findOrFail($id);
+		// only post->user_id can edit
+		if (Auth::user()->id != $post->user_id)
+		{
+			Session::flash('errorMessage', 'You are not authorized to edit this Post!');
+			// validation failed, redirect to the post create page with validation errors and old inputs
+			return Redirect::back()->withInput();
+		}
+		else
+		{
+			$post->delete();
+			return Redirect::action('PostsController@index');
+		}
 	}
 }
