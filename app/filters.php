@@ -78,3 +78,27 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+/*
+|--------------------------------------------------------------------------
+| Custom Filters
+|--------------------------------------------------------------------------
+|
+| This is created to blah.....
+|
+*/
+
+// Route::filter('post.protect', function()
+// {
+	
+// });
+
+// Route::filter('user.protect', function()
+// {
+	
+// });
+
+// Route::filter('auth.admin', function()
+// {
+	
+// });
