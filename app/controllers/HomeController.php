@@ -49,6 +49,7 @@ class HomeController extends BaseController {
 		else
 		{
 			// login failed, go back to the login screen
+			Session::flash('errorMessage', 'You cannot log in without a correct email and password.');
 			return Redirect::back()->withInput();
 		}
 	}

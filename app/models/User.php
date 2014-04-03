@@ -64,7 +64,16 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
 	*/
 	public function setUsernameAttribute($value)
 	{
-		$this->attributes['username'] = strtolower($value);
+		$this->attributes['user_name'] = strtolower($value);
+	}
+
+	/**
+	*
+	*mutator to adjust username to lowercase
+	*/
+	public function setEmailAttribute($value)
+	{
+		$this->attributes['email'] = strtolower($value);
 	}
 
 	/**

@@ -13,10 +13,11 @@
     <div class="container">
 
       {{ Form::open(array('action' => 'HomeController@doLogin', 'class' => 'form-signin')) }}
-      <form class="form-signin" role="form">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input name="email" type="email" class="form-control" placeholder="Email address" required autofocus>
-        <input name="password" type="password" class="form-control" placeholder="Password" required>
+        {{ Form::text('email', null, array('class' => 'form-control', 'placeholder' => 'Email address', 'required' => 'required', 'autofocus' => 'autofocus')) }}
+        {{ Form::password('password', array('class' => 'form-control', 'placeholder' => 'Password', 'required' => 'required',)) }}
+        {{ $errors->has('title') ? $errors->first('title', '<span class="help-block">:message</span>') : '' }}
+
         <label class="checkbox">
           <input name="remember" type="checkbox" value="remember-me"> Remember me
         </label>
