@@ -22,4 +22,21 @@ class Post extends BaseModel {
 		return $this->belongsTo('User');
 	}
 
+	public function assignImage($inputFile)
+	{
+		// Pull photo
+		$destinationPath = 'uploads';
+		$filename = $inputFile->getClientOriginalName();
+		$extension = $inputFile->getClientOriginalExtension(); 
+		$filename = str_random(12) . '.' . $extension;
+		$this->attributes['image_path'] = $filename;
+		$uploadSuccess = $inputFile->move($destinationPath, $filename);
+	}
+
+	// public function removeImage()
+	// {
+	// 	file::delete(path);
+	// 	$this->imagepath
+	// }
+
 }

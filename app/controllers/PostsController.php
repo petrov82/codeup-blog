@@ -72,13 +72,7 @@ class PostsController extends \BaseController {
 			// Pull photo
 			if (Input::hasFile('file'))
 			{
-				$file = Input::file('file');
-				$destinationPath = 'uploads';
-				$filename = $file->getClientOriginalName();
-				$extension = $file->getClientOriginalExtension(); 
-				$filename = str_random(12) . '.' . $extension;
-				$uploadSuccess = Input::file('file')->move($destinationPath, $filename);
-				$post->image_path = $filename;
+				$post->assignImage(Input::file('file'));
 			}
 
 			$post->save();
@@ -150,13 +144,7 @@ class PostsController extends \BaseController {
 			// Pull photo
 			if (Input::hasFile('file'))
 			{
-				$file = Input::file('file');
-				$destinationPath = 'uploads';
-				$filename = $file->getClientOriginalName();
-				$extension = $file->getClientOriginalExtension(); 
-				$filename = str_random(12) . '.' . $extension;
-				$uploadSuccess = Input::file('file')->move($destinationPath, $filename);
-				$post->image_path = $filename;
+				$post->assignImage(Input::file('file'));
 			}
 
 			$post->save();
