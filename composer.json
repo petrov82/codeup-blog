@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.1.*",
 		"barryvdh/laravel-debugbar": "dev-master",
-		"maxhoffmann/parsedown-laravel": "dev-master"
+		"maxhoffmann/parsedown-laravel": "dev-master",
+		"mews/purifier": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

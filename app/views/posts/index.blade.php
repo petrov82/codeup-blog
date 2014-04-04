@@ -38,7 +38,7 @@
 						<a href="{{ action('PostsController@edit', $post->id) }}">&nbsp;|&nbsp;Edit</a>
 					</p>
 					<p>
-						{{{ Str::words($post->body, 20) }}}
+						{{ Str::words(Markdown::parse($post->body, 20)) }}
 					</p>
 				</div>
 			</div>

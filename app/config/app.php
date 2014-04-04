@@ -108,6 +108,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'MaxHoffmann\Parsedown\ParsedownServiceProvider',
+		'Mews\Purifier\PurifierServiceProvider',
 
 	),
 
@@ -175,6 +176,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Markdown'        => 'MaxHoffmann\Parsedown\ParsedownFacade',
+		'Purifier'        => 'Mews\Purifier\Facades\Purifier',
 
 	),
 

@@ -13,7 +13,7 @@
 		<div><img src="../uploads/{{ $post->image_path }}"></div>
 		@endif
 		<div class="row">
-			<div class="col-md-10"><p>{{{ $post->body }}}</p></div>
+			<div class="col-md-10"><p>{{ $post->body }}</p></div>
 		</div>
 		<p>
 			<a href="{{ action('PostsController@edit', $post->id) }}">Edit&nbsp;|&nbsp;</a>
