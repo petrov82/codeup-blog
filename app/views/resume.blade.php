@@ -19,11 +19,11 @@
     </div> 
     <div class="row">
       <div class="col-md-1"></div>
-      <div class="col-md-3 centertext"><strong>email: </strong>peter@peterrhodes.net</div>
+      <div class="col-md-3 centertext"><strong>email: </strong><a href="mailto:peter@peterrhodes.net">peter@peterrhodes.net</a></div>
       <div class="col-md-1"></div>
-      <div class="col-md-3 centertext"><strong>twitter: </strong>@petrov82</div>
+      <div class="col-md-3 centertext"><strong>twitter: </strong><a href="https://twitter.com/petrov82">@petrov82</a></div>
       <div class="col-md-1"></div>
-      <div class="col-md-3 centertext"><strong>linkedin: </strong><a href="http://www.linkedin.com/in/peterrhodes"></a>/in/peterrhodes</div>
+      <div class="col-md-3 centertext"><strong>linkedin: </strong><a href="http://www.linkedin.com/in/peterrhodes">/in/peterrhodes</a></div>
       <div class="col-md-1"></div>
     </div>
     
