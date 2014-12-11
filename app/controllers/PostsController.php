@@ -41,7 +41,6 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//return "You created a Post!";
 		return View::make('posts.create')->with('post', new Post());
 	}
 

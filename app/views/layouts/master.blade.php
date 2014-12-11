@@ -12,11 +12,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <title> @yield('title') </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/journal-bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap theme -->
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 
@@ -47,7 +48,7 @@
 
   <body role="document">
     <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -60,7 +61,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="{{{ action('PostsController@index') }}}">Blog</a></li>
+            <li><a href="{{{ action('PostsController@index') }}}">Blog</a></li>
             <li><a href="{{{ action('HomeController@showResume') }}}">Resume</a></li>
             <li><a href="{{{ action('HomeController@showPortfolio') }}}">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>

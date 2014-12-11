@@ -7,7 +7,8 @@
 		"laravel/framework": "4.1.*",
 		"barryvdh/laravel-debugbar": "dev-master",
 		"maxhoffmann/parsedown-laravel": "dev-master",
-		"mews/purifier": "dev-master"
+		"mews/purifier": "dev-master",
+		"dingo/api": "0.6.*@dev"
 	},
 	"autoload": {
 		"classmap": [

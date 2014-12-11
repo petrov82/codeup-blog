@@ -9,14 +9,13 @@
             {{ Form::open(array('action' => array('PostsController@index'), 'method' => 'GET')) }}
             {{ Form::text('search', null, array('class' => 'form-control', 'placeholder' => 'Search the Blog')) }}
             {{ Form::submit('Search', array('class' => 'btn btn-default')) }}
-          </form>
+</form>
 @stop
 
 @section('content')
 	<div>
 		<h1><u>The Blogroll</u></h1>
 		<a href="{{ action('PostsController@create') }}" class="btn btn-primary btn-lg active" role="button">Create an New Post</a>
-
 	</div>
 
 		{{ $posts->appends(array('search' => Input::get('search')))->links() }}
